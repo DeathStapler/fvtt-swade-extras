@@ -1,3 +1,54 @@
 .swade-extras {
   
 }
+
+.swade-extras .dramatic-task  {
+    display: grid;
+
+    /* one column / two rows */
+    & .task-header {
+        grid-template-columns: 1fr; 
+        grid-template-rows: 3fr 2fr; 
+    }
+
+    & .task-round {
+        border-top: 1px;
+        border-bottom: 1px;
+
+        /* two columns / one row */
+        & .round-header {
+            grid-template-columns: 5fr 1fr;
+            grid-template-rows: 1fr;
+            
+            & .actor {
+                border: 1px solid black;
+
+                /* three columns / two rows */
+                & .top {    
+                    grid-template-columns: 1fr 5fr 2fr;
+                    grid-template-rows: 1fr 1fr;
+                    grid-template-areas: 
+                        'actoricon actorname actioncard'
+                        'skillicon skillname actioncard';
+                    
+                    & .actoricon {
+                        grid-area: actoricon;
+                    }
+                }
+
+                /* Two different layouts depending on if the roll has been done */
+                & .roll {
+                    &.rolled { /* If the roll has been done */
+                        grid-template-columns: 1fr 1fr 5fr 1fr 1fr;
+                        grid-template-rows: 1fr;
+                    }
+
+                    :not(.rolled) {
+                    }
+                }
+            }
+        }
+    }
+}
+
+
