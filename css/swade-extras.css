@@ -23,6 +23,7 @@
             & .actor {
                 border: 1px solid black;
 
+                /* Actor info, Skill Info, Action Card */
                 /* three columns / two rows */
                 & .top {    
                     grid-template-columns: 1fr 5fr 2fr;
