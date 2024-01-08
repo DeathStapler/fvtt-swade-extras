@@ -1,33 +1,37 @@
 {
-    "id": "swade-extras",
-    "title": "SWADE Extras",
-    "description": "Extra tools for use with the Savage Worlds Adventure Edition system.",
-    "version": "0.1",
-    "compatibility": {
-      "minimum": "11",
-      "verified": "11",
-      "maximum": "11"
-    },
-    "download": "https://github.com/DeathStapler/fvtt-swade-extras/archive/refs/v1.0.0/main.zip",
-    "url": "https://github.com/DeathStapler/fvtt-swade-extras",
-    "manifest": "https://github.com/DeathStapler/fvtt-swade-extras/v1.0.0/module.json",
-    "esmodules": [
-        "src/main.js"
-    ],
-    "languages": [
-        {
-            "lang": "en",
-            "name": "English",
-            "path": "lang/en.json"
-        }
-    ],
-    "authors": [
-      {
-        "name": "Ray Hodel",
-        "discord": "Death_Stapler",
-        "email": "ray@hodel.com",
-        "url": "https://github.com/DeathStapler/"
-      }
-    ],
-    "readme": "README.md"
-  }
+  "id": "swade-extras",
+  "title": "SWADE Extras",
+  "description": "Extra tools for use with the Savage Worlds Adventure Edition system.",
+  "version": "0.1",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11",
+    "maximum": "11"
+  },
+  "download": "https://github.com/DeathStapler/fvtt-swade-extras/archive/refs/v1.0.0/main.zip",
+  "url": "https://github.com/DeathStapler/fvtt-swade-extras",
+  "manifest": "https://github.com/DeathStapler/fvtt-swade-extras/v1.0.0/module.json",
+  "esmodules": [
+    "src/main.js"
+  ],
+  "styles": [
+    "css/swade-extras.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json",
+      "flags": {}
+    }
+  ],
+  "authors": [
+    {
+      "name": "Ray Hodel",
+      "email": "ray@hodel.com",
+      "url": "https://github.com/DeathStapler/",
+      "discord": "Death_Stapler"
+    }
+  ],
+  "readme": "README.md"
+}

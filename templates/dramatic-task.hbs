@@ -1,0 +1,45 @@
+<div class="swade-extras">
+    <div class="dramatic-task">
+        <div class="task-header">
+            <div class="task-type bold font-120">{{ task_type }}</div>
+            <div class="task-name font-80">{{ task_name }}</div>
+        </div>
+        {{#each rounds}}
+        <div class="task-round" data-round="1">
+            <div class="round-header font-120">
+                <div><i class="fas fa-caret-right"></i> Round {{ addone @index }}</div>
+                <div></div>
+            </div>
+
+            {{#each actors}}
+            <div class="task-actor">
+                <div class="task-main">
+                    <div class="actor-icon"><img src="{{ actor/img}}"></div>
+                    <div class="actor-name">{{ actor/name }}</div>
+                    
+                    <div class="skill-icon"><img src="{{ skill/img}}"></div>
+                    <div class="skill-name">{{ skill/name }}</div>
+
+                    <div class="action-card"><img src="{{ action_card/img }}" title="{{ action_card/name }}"></div>
+                </div>
+                {{#if rolled}}
+                <div class="task-roll rolled">
+                    <div class="rolls">
+                        <div class="roll-total {{ results/trait_roll/result }}" title="{{ capitalize results/trait_roll/result }}">{{ results/trait_roll/total }}<img src=""></div>
+                        <div class="roll-total {{ results/wild_roll/result }}" title="{{ capitalize results/wild_roll/result }}">{{ results/wild_roll/total }}<img src=""></div>
+                    </div>
+                    <div class="empty"></div>
+                    <button class="swade-extras-roll-button" title="Free Reroll"><i class="fas fa-redo-alt"></i></button>
+                    <button class="swade-extras-roll-button" title="Reroll with Bennie"><img src="systems/swade/assets/benny/benny-chip-front.png"></button>
+                </div>
+                {{else}}
+                <div class="task-roll">
+                    <button class="swade-extras-roll-button"><i class="fas fa-dice"></i></button>
+                </div>
+                {{/if}}
+            </div>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+</div>

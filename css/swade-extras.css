@@ -1,55 +1,169 @@
-.swade-extras {
-  
-}
-
-.swade-extras .dramatic-task  {
+.dramatic-task  {
     display: grid;
+    margin-top: 5px;
+    
 
     /* one column / two rows */
     & .task-header {
+        display: grid;
         grid-template-columns: 1fr; 
-        grid-template-rows: 3fr 2fr; 
+        grid-template-rows: 2fr 2fr;
     }
-
+    
     & .task-round {
-        border-top: 1px;
-        border-bottom: 1px;
+        border-top: 1px solid darkgray;
+        margin-bottom: 5px;
+        padding: 3px;
 
         /* two columns / one row */
         & .round-header {
+            display: grid;
             grid-template-columns: 5fr 1fr;
             grid-template-rows: 1fr;
-            
-            & .actor {
-                border: 1px solid black;
+            margin-bottom: 5px;
+        }
 
-                /* Actor info, Skill Info, Action Card */
-                /* three columns / two rows */
-                & .top {    
-                    grid-template-columns: 1fr 5fr 2fr;
-                    grid-template-rows: 1fr 1fr;
-                    grid-template-areas: 
-                        'actoricon actorname actioncard'
-                        'skillicon skillname actioncard';
-                    
-                    & .actoricon {
-                        grid-area: actoricon;
-                    }
+        & .task-actor {
+            border: 1px solid gray;
+            border-radius: 4px;
+            padding: 4px;
+            background-color: lightgray;
+
+            /* Actor info, Skill Info, Action Card */
+            /* three columns / two rows */
+            & .task-main {
+                display: grid;
+                grid-template-columns: 1fr 8fr 2fr;
+                grid-template-rows: 30px 30px;
+                grid-template-areas: 
+                    'actoricon actorname actioncard'
+                    'skillicon skillname actioncard';
+                column-gap: 3px;
+
+                & .actor-icon {
+                    display: grid;
+                    grid-area: actoricon;
+                    align-items: center;
                 }
+                & .actor-name {
+                    display: grid;
+                    grid-area: actorname;
+                    align-items: center;
+                }
+                & .skill-icon {
+                    display: grid;
+                    grid-area: skillicon;
+                    align-items: center;
+                }
+                & .skill-name {
+                    display: grid;
+                    grid-area: skillname;
+                    align-items: center;
+                    
+                }
+                & .action-card {
+                    grid-area: actioncard;
+                    padding: 5px;
 
-                /* Two different layouts depending on if the roll has been done */
-                & .roll {
-                    &.rolled { /* If the roll has been done */
-                        grid-template-columns: 1fr 1fr 5fr 1fr 1fr;
-                        grid-template-rows: 1fr;
-                    }
-
-                    :not(.rolled) {
+                    :hover {
+                        transform: scale(400%);
+                        transform-origin: right bottom;
                     }
                 }
             }
+
+            /* Two different layouts depending on if the roll has been done */
+            & .task-roll {
+                margin-top: 4px;
+                margin-bottom: 2px;
+                font-size: 21px;
+
+                padding: 4px;
+                border: 2px solid gray;
+                border-radius: 8px;
+                background-color: darkgray;
+
+                &.rolled { /* If the roll has been done */
+                    display: grid;
+                    grid-template-columns: 6fr 3fr 1fr 1fr;
+                    grid-template-rows: 1fr;
+                    justify-items: left;
+                    align-items: center;
+
+                    & .rolls {
+                        display: flex;
+                        gap: 5px;
+
+                        & div {
+                            border: 1px solid lightgray;
+                            border-radius: 5px;
+                            background-color: rgba(255,255,255, .2);
+                            padding: 0 2px 0 2px;
+                            min-width: 30px;
+                            text-align: center;
+                        }
+                    }
+    
+                    & img {
+                        border: 0;
+                        width: 25px;
+                    }
+    
+                    & .roll-total {
+                        &.success img {
+                            height: 50%;
+                            content: url(https://th.bing.com/th/id/R.f880f7df792210e7ac3371fe0bfa47e1?rik=bWF8%2fmUdbqltnQ&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2fgreen-check-mark-icon-transparent-background%2fgreen-check-mark-icon-transparent-background-23.png&ehk=Dkj1%2fxqHSU4%2bHd5aUo30w4PfwUWaS0TG9iksB7lQtAI%3d&risl=&pid=ImgRaw&r=0);
+                        }
+                        &.raise img {
+                            content: url(https://www.seekpng.com/png/detail/245-2456342_check-mark-double-tick-icons-png.png);
+                        }
+                        &.failure {
+                            color: red;
+                            text-decoration: line-through;
+                        }
+                    }
+    
+                    
+                }
+
+                &:not(.rolled) {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 1fr;
+                    justify-items: center;
+
+                    & button {
+                        width: 25%;
+                    }
+                }
+
+                
+            }
         }
+
     }
+
+    & .bold {
+        font-weight: bold;
+    }
+    
+    & .font-120 {
+        font-size: 120%;
+    }
+    
+    & .font-80 {
+        font-size: 80%;
+    }
+
+}
+
+.swade-extras-roll-button {
+    border-color: #444;
+    padding-top: 4px;
+    line-height: 100%;
+    width: 2em;
+    height: 2em;
+    border-radius: 7px;
 }
 
 
